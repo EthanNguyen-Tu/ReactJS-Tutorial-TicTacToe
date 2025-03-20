@@ -4,10 +4,11 @@ export function checkWinner(squares, sideSize) {
   */
     let arr;
 
-    // Check each row
+    // Checks that all values in the array are not null and the same
     const allEqual = (arr) => arr.every((val) => val != null && val === arr[0]);
 
-    for (let i = 0; i < squares.length; i += sideSize) {
+    // Check each row
+    for (let i = 0; i < squares.length; i = i + sideSize) {
         arr = squares.slice(i, i + sideSize);
         if (allEqual(arr)) {
             return arr[0];
@@ -17,7 +18,7 @@ export function checkWinner(squares, sideSize) {
     // Check each column
     for (let i = 0; i < sideSize; i++) {
         arr = [];
-        for (let j = i; j < squares.length; j += sideSize) {
+        for (let j = i; j < squares.length; j = j + sideSize) {
             arr.push(squares[j]);
         }
         if (allEqual(arr)) {

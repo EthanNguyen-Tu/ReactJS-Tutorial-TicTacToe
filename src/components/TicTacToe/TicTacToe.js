@@ -2,12 +2,11 @@ import Board from "../Board/Board";
 import { useState } from "react";
 import "./TicTacToe.css";
 
-function TicTacToe() {
-    const sideSize = 5;
-    const [history, setHistory] = useState([Array(sideSize ** 2).fill(null)]);
+function TicTacToe({ boardSideSize }) {
+    const [history, setHistory] = useState([
+        Array(boardSideSize ** 2).fill(null),
+    ]);
     const [currentMove, setCurrentMove] = useState(0);
-    const xIsNext = currentMove % 2 === 0;
-    const currentSquares = history[currentMove];
 
     function handlePlay(nextSquares) {
         const nextHistory = [...history.slice(0, currentMove + 1), nextSquares];
@@ -19,7 +18,7 @@ function TicTacToe() {
         setCurrentMove(nextMove);
     }
 
-    const moves = history.map((squares, move) => {
+    const moves = history.map((_, move) => {
         let description = move > 0 ? "Go to move #" + move : "Go to game start";
         return (
             <li key={move}>
@@ -30,13 +29,13 @@ function TicTacToe() {
 
     return (
         <div className="tic-tac-toe">
-            {sideSize && (
+            {boardSideSize && (
                 <div className="tic-tac-toe-board">
                     <Board
-                        xIsNext={xIsNext}
-                        squares={currentSquares}
+                        xIsNext={currentMove % 2 === 0}
+                        squares={history[currentMove]}
                         onPlay={handlePlay}
-                        sideSize={sideSize}
+                        sideSize={boardSideSize}
                     />
                 </div>
             )}

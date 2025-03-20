@@ -48,52 +48,12 @@ ul {
     padding-inline-start: 20px;
 }
 
-.square {
-    background: #fff;
-    border: 1px solid #999;
-    float: left;
-    font-size: 24px;
-    font-weight: bold;
-    line-height: 34px;
-    height: 34px;
-    margin-right: -1px;
-    margin-top: -1px;
-    padding: 0;
-    text-align: center;
-    width: 34px;
-}
-
-.board-row:after {
-    clear: both;
-    content: "";
-    display: table;
-}
-
-.board-row {
-    width: fit-content;
-}
-
 .status {
     margin-bottom: 5%;
 }
 
-.game {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-}
-
-.game-info {
-    margin-left: 5%;
-}
-
 .half {
     width: 50%;
-}
-
-.game-board {
-    text-align: center;
-    padding-left: 25%;
 }
 
 .center {

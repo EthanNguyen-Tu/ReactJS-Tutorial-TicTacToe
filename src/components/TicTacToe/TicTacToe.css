@@ -1,0 +1,14 @@
+.tic-tac-toe {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.tic-tac-toe-board {
+    text-align: center;
+    padding-left: 25%;
+}
+
+.tic-tac-toe-info {
+    margin-left: 5%;
+}
